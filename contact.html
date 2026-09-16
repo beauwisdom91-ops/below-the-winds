@@ -1,9 +1,12 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contact — Below the Winds</title>
+  <meta name="description" content="Write Below the Winds about wants, editions, and wholesale. Order issues on Amazon stay on Amazon." />
+  <link rel="canonical" href="https://below-the-winds.netlify.app/contact" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="css/site.css" />
 </head>
 <body>
@@ -23,18 +26,35 @@
   <main class="section">
     <div class="wrap">
       <p class="kicker">Write the shop</p>
-      <h2>Contact</h2>
-      <p class="note">For order issues, use Amazon first. For wants, editions, and wholesale questions, use this form or <a data-btw-email href="mailto:beau.wisdom91+shop@gmail.com">beau.wisdom91+shop@gmail.com</a>.</p>
-      <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/thanks.html">
+      <h1>Contact</h1>
+      <p class="note">For paid Amazon orders, use Amazon first. For wants, editions, wholesale, and shop-till questions, use this form or <a data-btw-email href="mailto:beau.wisdom91+shop@gmail.com">beau.wisdom91+shop@gmail.com</a>.</p>
+      <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/thanks">
         <input type="hidden" name="form-name" value="contact" />
-        <p style="display:none"><label>Don’t fill this <input name="bot-field" /></label></p>
+        <p hidden><label>Don’t fill this <input name="bot-field" /></label></p>
         <label for="name">Name</label>
-        <input id="name" name="name" required />
+        <input id="name" name="name" autocomplete="name" required />
         <label for="email">Email</label>
-        <input id="email" name="email" type="email" required />
+        <input id="email" name="email" type="email" autocomplete="email" required />
         <label for="message">Message</label>
         <textarea id="message" name="message" rows="6" required></textarea>
         <button class="btn solid" type="submit">Send</button>
+      </form>
+      <h2>Want list</h2>
+      <p class="note">Name the edition. If it walks in, the shop emails you before it hits the catalog.</p>
+      <form name="want" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/thanks">
+        <input type="hidden" name="form-name" value="want" />
+        <p hidden><label>Don’t fill this <input name="bot-field" /></label></p>
+        <label for="want-name">Name</label>
+        <input id="want-name" name="name" autocomplete="name" required />
+        <label for="want-email">Email</label>
+        <input id="want-email" name="email" type="email" autocomplete="email" required />
+        <label for="want-title">Title</label>
+        <input id="want-title" name="title" required />
+        <label for="want-author">Author</label>
+        <input id="want-author" name="author" />
+        <label for="want-note">Edition / ISBN / notes</label>
+        <textarea id="want-note" name="message" rows="4"></textarea>
+        <button class="btn ghost" type="submit">Add to the want list</button>
       </form>
     </div>
   </main>

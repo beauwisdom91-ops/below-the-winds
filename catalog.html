@@ -1,12 +1,16 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Catalog — Below the Winds</title>
+  <meta name="description" content="On-the-shelf used scholarly books from Below the Winds. Buy this copy or open the Amazon ISBN." />
+  <link rel="canonical" href="https://below-the-winds.netlify.app/catalog" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="css/site.css" />
 </head>
 <body>
+  <a class="skip" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="wrap header-inner">
       <a class="wordmark" href="index.html">Below the Winds<span>Johnson · Northwest Arkansas</span></a>
@@ -20,11 +24,12 @@
       </nav>
     </div>
   </header>
-  <main class="section">
+  <main id="main" class="section">
     <div class="wrap">
       <p class="kicker">PageKeep catalog</p>
-      <h2>On the shelf</h2>
-      <p class="note">Prices are shop targets. Buy buttons open Amazon. Swap them for live Seller Central links once the first listings are up.</p>
+      <h1>On the shelf</h1>
+      <p class="note">Prices are this shop’s targets for the copy in Johnson. <strong>Buy this copy</strong> is the shop till. Amazon is the ISBN search until Seller Central listings replace it.</p>
+      <p class="banner" id="canceled" hidden>Checkout was canceled. The copy is still on the shelf.</p>
       <div class="toolbar">
         <button class="chip on" type="button" data-shelf="All">All</button>
         <button class="chip" type="button" data-shelf="Southeast Asia">Southeast Asia</button>
@@ -36,7 +41,10 @@
         <button class="chip" type="button" data-shelf="Urban Studies">Urban</button>
         <button class="chip" type="button" data-shelf="Religion">Religion</button>
         <button class="chip" type="button" data-shelf="Literature">Literature</button>
-        <input id="q" type="search" placeholder="Search title or author" />
+        <search class="search-bar">
+          <label class="visually-hidden" for="q">Search title or author</label>
+          <input id="q" type="search" placeholder="Search title or author" />
+        </search>
         <span class="note" id="count"></span>
       </div>
       <div class="books" id="books"></div>
@@ -48,7 +56,36 @@
       <div>Amazon seller name: BelowtheWinds</div>
     </div>
   </footer>
+  <dialog id="buy-dialog" closedby="any" aria-labelledby="buy-heading">
+    <div class="dialog-head">
+      <div>
+        <p class="kicker">This copy</p>
+        <h2 id="buy-heading"></h2>
+        <p class="note" id="buy-meta"></p>
+      </div>
+      <form method="dialog"><button class="btn ghost" value="close">Close</button></form>
+    </div>
+    <p class="note" id="buy-note" hidden></p>
+    <div class="actions">
+      <button class="btn solid" type="button" id="buy-pay">Pay with card</button>
+      <a class="btn ghost" id="buy-amazon" target="_blank" rel="noopener">Amazon used copies</a>
+    </div>
+    <form name="order" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/thanks">
+      <input type="hidden" name="form-name" value="order" />
+      <p hidden><label>Don’t fill this <input name="bot-field" /></label></p>
+      <input type="hidden" id="order-book-id" name="book_id" />
+      <input type="hidden" id="order-title" name="title" />
+      <p class="kicker">Or request an invoice</p>
+      <label for="order-name">Name</label>
+      <input id="order-name" name="name" autocomplete="name" required />
+      <label for="order-email">Email</label>
+      <input id="order-email" name="email" type="email" autocomplete="email" required />
+      <label for="order-message">Note (optional)</label>
+      <textarea id="order-message" name="message" rows="3"></textarea>
+      <button class="btn ghost" type="submit">Request this copy</button>
+    </form>
+  </dialog>
   <script src="js/config.js"></script>
-  <script src="js/catalog.js"></script>
+  <script type="module" src="js/catalog.js"></script>
 </body>
 </html>

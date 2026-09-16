@@ -1,18 +1,11 @@
 window.BTW = {
   brand: "Below the Winds",
   location: "Johnson / Northwest Arkansas",
-  email: "beauraywisd@proton.me",
+  email: "beau.wisdom91+shop@gmail.com",
   amazonStoreName: "BelowtheWinds",
   amazonStoreUrl: "https://www.amazon.com/s?k=BelowtheWinds&i=stripbooks",
-  amazonSellerId: ""
-};
-window.amazonSearch = function (title, author) {
-  const q = encodeURIComponent([title, author].filter(Boolean).join(" "));
-  return "https://www.amazon.com/s?k=" + q + "&i=stripbooks";
-};
-window.amazonIsbn = function (isbn) {
-  if (!isbn) return window.BTW.amazonStoreUrl;
-  return "https://www.amazon.com/s?k=" + encodeURIComponent(isbn) + "&i=stripbooks";
+  amazonSellerId: "",
+  shippingCents: 499
 };
 document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll("[data-btw-email]").forEach(function (el) {

@@ -1,9 +1,13 @@
 [build]
   publish = "."
-  command = "echo ready"
+  command = "npm ci --omit=dev"
 
 [build.environment]
   NODE_VERSION = "20"
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
 
 [[headers]]
   for = "/*"
@@ -11,6 +15,11 @@
     X-Frame-Options = "DENY"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "/data/*"
+  [headers.values]
+    Cache-Control = "public, max-age=300"
 
 [[redirects]]
   from = "/shop"
@@ -21,3 +30,43 @@
   from = "/amazon"
   to = "https://www.amazon.com/s?k=BelowtheWinds&i=stripbooks"
   status = 302
+
+[[redirects]]
+  from = "/sold"
+  to = "/sold.html"
+  status = 200
+
+[[redirects]]
+  from = "/thanks"
+  to = "/thanks.html"
+  status = 200
+
+[[redirects]]
+  from = "/privacy"
+  to = "/privacy.html"
+  status = 200
+
+[[redirects]]
+  from = "/catalog"
+  to = "/catalog.html"
+  status = 200
+
+[[redirects]]
+  from = "/collections"
+  to = "/collections.html"
+  status = 200
+
+[[redirects]]
+  from = "/about"
+  to = "/about.html"
+  status = 200
+
+[[redirects]]
+  from = "/shipping"
+  to = "/shipping.html"
+  status = 200
+
+[[redirects]]
+  from = "/contact"
+  to = "/contact.html"
+  status = 200
