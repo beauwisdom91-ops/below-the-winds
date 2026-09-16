@@ -210,6 +210,15 @@ input, textarea {
 }
 .form-error { color: #7a2e24; font-size: 0.92rem; margin: 0; }
 textarea[readonly] { background: var(--paper-deep); }
+.pay { margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--rule); }
+.pay-buttons { display: grid; gap: 8px; margin: 12px 0; }
+.pay-buttons .btn { text-align: center; }
+.btn.is-off,
+.btn[aria-disabled="true"] {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: auto;
+}
 @media (max-width: 720px) {
   .header-inner { flex-direction: column; align-items: flex-start; padding: 14px 0; }
   .hero { padding: 40px 0 32px; }

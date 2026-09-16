@@ -85,10 +85,19 @@
     return cart;
   }
 
-  function total() {
+  function subtotal() {
     return items().reduce(function (sum, it) {
       return sum + Number(it.price) * Number(it.qty || 1);
     }, 0);
+  }
+
+  function shipping() {
+    var flat = Number((window.BTW && window.BTW.shippingFlat) || 0);
+    return items().length && flat > 0 ? flat : 0;
+  }
+
+  function total() {
+    return subtotal() + shipping();
   }
 
   function clear() {
@@ -146,6 +155,10 @@
         "<button type=\"button\" class=\"btn ghost\" data-remove=\"" + escapeHtml(it.id) + "\">Remove</button>" +
         "</div></article>";
     }).join("");
+    var subEl = document.getElementById("cart-subtotal");
+    var shipEl = document.getElementById("cart-shipping");
+    if (subEl) subEl.textContent = money(subtotal());
+    if (shipEl) shipEl.textContent = money(shipping());
     if (totalEl) totalEl.textContent = money(total());
   }
 
@@ -157,6 +170,8 @@
     add: add,
     remove: remove,
     setQty: setQty,
+    subtotal: subtotal,
+    shipping: shipping,
     total: total,
     clear: clear,
     money: money,

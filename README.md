@@ -17,9 +17,23 @@ There is no Netlify site connected to this GitHub repository. Do not treat `belo
 
 ## How orders work
 
-Checkout posts a Netlify form named `orders` with buyer name, email, optional phone, shipping address, a Media Mail note, dollar total, and line items (plain text plus JSON). There is no Stripe or PayPal in this version. After the form arrives, email the buyer, take payment, then pack.
+Checkout posts a Netlify form named `orders` with buyer name, email, optional phone, shipping address, a Media Mail note, dollar total, and line items (plain text plus JSON). After the form arrives, email the buyer, take payment, then pack.
 
-Public shop email: **shop@belowthewinds.com**.
+Totals include a flat USPS Media Mail estimate (`shippingFlat`, currently $4.75) added once per order. The exact total is confirmed by email before anything ships.
+
+### Payment buttons
+
+The checkout page shows pay buttons that stay disabled until you paste a real handle into `js/config.js`:
+
+```js
+stripePaymentLink: "https://buy.stripe.com/…",  // card
+paypalMe: "YourHandle",                         // paypal.me/YourHandle
+cashApp: "YourCashtag"                          // cash.app/$YourCashtag
+```
+
+The Amazon storefront button works today. The card (Stripe), PayPal, and Cash App buttons light up automatically the moment their slot is filled — empty slots stay visibly disabled so no buyer assumes a live charge went through.
+
+Public shop email: **beauraywisd@proton.me**.
 
 ## Amazon
 

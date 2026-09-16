@@ -35,7 +35,7 @@
         <p class="kicker">Order</p>
         <h2>Received.</h2>
         <p>The shop has your order. We will email you to confirm the copies, Media Mail shipping, and payment. Copies stay on hold until we write back.</p>
-        <p>If you do not hear from us, write <a href="mailto:shop@belowthewinds.com">shop@belowthewinds.com</a>.</p>
+        <p>If you do not hear from us, write <a href="mailto:beauraywisd@proton.me">beauraywisd@proton.me</a>.</p>
         <p><a class="btn solid" href="catalog.html">Back to the catalog</a></p>
       </div>
 
@@ -84,7 +84,7 @@
           <textarea id="items-text" name="items" rows="4" readonly></textarea>
 
           <p class="note">Ships USPS Media Mail from Johnson, Arkansas. Media Mail is for books, within the United States, and is slower than Priority — typically several business days after we pack. Handle time is one business day. This form holds the copies; we email to confirm payment.</p>
-          <p class="note">If the form does not go through, write <a href="mailto:shop@belowthewinds.com">shop@belowthewinds.com</a> with your name, address, and titles.</p>
+          <p class="note">If the form does not go through, write <a href="mailto:beauraywisd@proton.me">beauraywisd@proton.me</a> with your name, address, and titles.</p>
           <p id="order-error" class="form-error" hidden></p>
           <button class="btn solid" type="submit">Send order</button>
         </form>
@@ -93,15 +93,31 @@
           <p class="kicker">Order</p>
           <h3>Summary</h3>
           <ul id="order-summary-lines" class="summary-lines"></ul>
+          <ul class="summary-lines">
+            <li><span>Subtotal</span><span id="order-summary-subtotal">$0.00</span></li>
+            <li><span>USPS Media Mail (est.)</span><span id="order-summary-shipping">$0.00</span></li>
+          </ul>
           <p class="cart-total">Total <span id="order-summary-total">$0.00</span></p>
           <p class="note">One used copy per title. Packed in Johnson.</p>
+
+          <div class="pay">
+            <p class="kicker">Pay</p>
+            <p class="note">Send the order first so we can hold the copies, then pay by whichever button is lit. Media Mail is estimated; we confirm the exact total by email before anything ships.</p>
+            <div class="pay-buttons">
+              <a id="pay-amazon" class="btn ghost" href="#" target="_blank" rel="noopener">Buy on Amazon</a>
+              <a id="pay-stripe" class="btn solid" href="#" target="_blank" rel="noopener" aria-disabled="true">Pay by card (Stripe)</a>
+              <a id="pay-paypal" class="btn ghost" href="#" target="_blank" rel="noopener" aria-disabled="true">PayPal</a>
+              <a id="pay-cashapp" class="btn ghost" href="#" target="_blank" rel="noopener" aria-disabled="true">Cash App</a>
+            </div>
+            <p id="pay-note" class="note"></p>
+          </div>
         </aside>
       </div>
     </div>
   </main>
   <footer class="site-footer">
     <div class="wrap">
-      <div>Below the Winds · <a href="mailto:shop@belowthewinds.com">shop@belowthewinds.com</a></div>
+      <div>Below the Winds · <a href="mailto:beauraywisd@proton.me">beauraywisd@proton.me</a></div>
       <div>Packed in Johnson, Arkansas</div>
     </div>
   </footer>

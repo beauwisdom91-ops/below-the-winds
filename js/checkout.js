@@ -21,6 +21,8 @@
 
   function renderSummary() {
     var mount = document.getElementById("order-summary-lines");
+    var subEl = document.getElementById("order-summary-subtotal");
+    var shipEl = document.getElementById("order-summary-shipping");
     var totalEl = document.getElementById("order-summary-total");
     if (!mount) return;
     var items = window.BTWCart.items();
@@ -28,7 +30,45 @@
       return "<li><span>" + window.BTWCart.escapeHtml(it.title) + "</span><span>" +
         window.BTWCart.money(it.price) + "</span></li>";
     }).join("");
+    if (subEl) subEl.textContent = window.BTWCart.money(window.BTWCart.subtotal());
+    if (shipEl) shipEl.textContent = window.BTWCart.money(window.BTWCart.shipping());
     if (totalEl) totalEl.textContent = window.BTWCart.money(window.BTWCart.total());
+  }
+
+  // Turn each pay button on only when its config slot is filled. Empty slots
+  // stay visibly disabled so nobody assumes a live card charge.
+  function renderPayButtons() {
+    var links = window.btwPayLinks ? window.btwPayLinks(window.BTWCart.total()) : {};
+    var pending = [];
+
+    function wire(id, url, label) {
+      var el = document.getElementById(id);
+      if (!el) return;
+      if (url) {
+        el.href = url;
+        el.removeAttribute("aria-disabled");
+        el.classList.remove("is-off");
+      } else {
+        el.href = "#";
+        el.setAttribute("aria-disabled", "true");
+        el.classList.add("is-off");
+        el.addEventListener("click", function (e) { e.preventDefault(); });
+        if (label) pending.push(label);
+      }
+    }
+
+    // Amazon storefront works today; the rest light up when Beau adds handles.
+    wire("pay-amazon", links.amazon, null);
+    wire("pay-stripe", links.stripe, "card (Stripe)");
+    wire("pay-paypal", links.paypal, "PayPal");
+    wire("pay-cashapp", links.cashApp, "Cash App");
+
+    var noteEl = document.getElementById("pay-note");
+    if (noteEl) {
+      noteEl.textContent = pending.length
+        ? "Not connected yet: " + pending.join(", ") + ". Send the order and we email a payment link, or pay on Amazon."
+        : "";
+    }
   }
 
   function showEmpty() {
@@ -73,6 +113,7 @@
 
     showForm();
     renderSummary();
+    renderPayButtons();
     fillOrderFields();
 
     form.addEventListener("submit", function (e) {
@@ -106,7 +147,7 @@
         showConfirm();
       }).catch(function () {
         if (submitBtn) submitBtn.disabled = false;
-        showError("The order could not be sent from this preview. Write shop@belowthewinds.com with the titles, or connect this repo to Netlify so the orders form can be submitted.");
+        showError("The order could not be sent from this preview. Write beauraywisd@proton.me with the titles, or connect this repo to Netlify so the orders form can be submitted.");
       });
     });
   });
