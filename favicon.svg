@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Below the Winds">
+  <rect width="64" height="64" fill="#f4ede1"/>
+  <text x="8" y="42" font-family="Georgia, serif" font-size="28" font-style="italic" fill="#2c2a26">B</text>
+  <path d="M28 24c10 2 18 8 24 16" fill="none" stroke="#5c4a32" stroke-width="2"/>
+</svg>

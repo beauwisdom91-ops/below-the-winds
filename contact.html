@@ -1,9 +1,12 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contact — Below the Winds</title>
+  <meta name="description" content="Write Below the Winds about wants, editions, and wholesale. Order issues on Amazon stay on Amazon." />
+  <link rel="canonical" href="https://below-the-winds.netlify.app/contact" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="css/site.css" />
 </head>
 <body>
@@ -13,7 +16,7 @@
       <nav>
         <a href="index.html">Home</a>
         <a href="catalog.html">Catalog</a>
-        <a href="collections.html">Collections</a>
+        <a href="wants.html">Wants</a>
         <a href="about.html">About</a>
         <a href="shipping.html">Shipping</a>
         <a href="contact.html" aria-current="page">Contact</a>
@@ -23,15 +26,15 @@
   <main class="section">
     <div class="wrap">
       <p class="kicker">Write the shop</p>
-      <h2>Contact</h2>
-      <p class="note">For order issues, use Amazon first. For wants, editions, and wholesale questions, use this form or <a data-btw-email href="mailto:beau.wisdom91+shop@gmail.com">beau.wisdom91+shop@gmail.com</a>.</p>
-      <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/thanks.html">
+      <h1>Contact</h1>
+      <p class="note">For paid Amazon orders, use Amazon first. For editions, wholesale, and catalog questions, use this form or <a data-btw-email href="mailto:beauraywisd@proton.me">beauraywisd@proton.me</a>. Title hunts go on the <a href="wants.html">want list</a>.</p>
+      <form name="contact" method="POST" action="/thanks" data-netlify="true" netlify-honeypot="bot-field">
         <input type="hidden" name="form-name" value="contact" />
-        <p style="display:none"><label>Don’t fill this <input name="bot-field" /></label></p>
+        <p class="hp"><label>Don’t fill this <input name="bot-field" /></label></p>
         <label for="name">Name</label>
-        <input id="name" name="name" required />
+        <input id="name" name="name" autocomplete="name" required />
         <label for="email">Email</label>
-        <input id="email" name="email" type="email" required />
+        <input id="email" name="email" type="email" autocomplete="email" required />
         <label for="message">Message</label>
         <textarea id="message" name="message" rows="6" required></textarea>
         <button class="btn solid" type="submit">Send</button>
@@ -40,7 +43,7 @@
   </main>
   <footer class="site-footer">
     <div class="wrap">
-      <div><a data-btw-email href="mailto:beau.wisdom91+shop@gmail.com">beau.wisdom91+shop@gmail.com</a></div>
+      <div><a data-btw-email href="mailto:beauraywisd@proton.me">beauraywisd@proton.me</a></div>
       <div>Amazon store name: BelowtheWinds</div>
     </div>
   </footer>

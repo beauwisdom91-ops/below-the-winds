@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Wants — Below the Winds</title>
+  <meta name="description" content="Ask Below the Winds to watch for a title or edition. If it walks in, the shop emails you first." />
+  <link rel="canonical" href="https://below-the-winds.netlify.app/wants" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="css/site.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="wordmark" href="index.html">Below the Winds<span>Johnson · Northwest Arkansas</span></a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="catalog.html">Catalog</a>
+        <a href="wants.html" aria-current="page">Wants</a>
+        <a href="about.html">About</a>
+        <a href="shipping.html">Shipping</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <main class="section">
+    <div class="wrap">
+      <p class="kicker">Want list</p>
+      <h1>Name the edition.</h1>
+      <p class="note">If it walks in, the shop emails you before it hits the catalog. Be specific: title, author, edition, and any ISBN you already know. Do not invent one if you do not have it.</p>
+      <form name="wants" method="POST" action="/thanks" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="wants" />
+        <p class="hp"><label>Don’t fill this <input name="bot-field" /></label></p>
+        <label for="want-name">Name</label>
+        <input id="want-name" name="name" autocomplete="name" required />
+        <label for="want-email">Email</label>
+        <input id="want-email" name="email" type="email" autocomplete="email" required />
+        <label for="want-title">Title</label>
+        <input id="want-title" name="title" required />
+        <label for="want-author">Author</label>
+        <input id="want-author" name="author" />
+        <label for="want-note">Edition / ISBN / notes</label>
+        <textarea id="want-note" name="message" rows="5"></textarea>
+        <button class="btn solid" type="submit">Add to the want list</button>
+      </form>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <div><a data-btw-email href="mailto:beauraywisd@proton.me">beauraywisd@proton.me</a></div>
+      <div>Amazon store name: BelowtheWinds</div>
+    </div>
+  </footer>
+  <script src="js/config.js"></script>
+</body>
+</html>
