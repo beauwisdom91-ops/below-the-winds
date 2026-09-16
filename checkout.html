@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Checkout — Below the Winds</title>
+  <meta name="description" content="Order used books from Below the Winds. Packed in Johnson, Arkansas. USPS Media Mail." />
+  <link rel="stylesheet" href="css/site.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="wordmark" href="index.html">Below the Winds<span>Johnson · Northwest Arkansas</span></a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="catalog.html">Catalog</a>
+        <a href="cart.html">Cart <span class="cart-count" data-cart-count aria-live="polite">0</span></a>
+        <a href="about.html">About</a>
+        <a href="shipping.html">Shipping</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <main class="section">
+    <div class="wrap">
+      <p class="kicker">Direct sale</p>
+      <h2>Checkout</h2>
+
+      <div id="checkout-empty" hidden>
+        <p class="note">Nothing to order yet. Add a copy from the catalog first.</p>
+        <p><a class="btn solid" href="catalog.html">Browse the catalog</a></p>
+      </div>
+
+      <div id="order-confirm" class="confirm" hidden>
+        <p class="kicker">Order</p>
+        <h2>Received.</h2>
+        <p>The shop has your order. We will email you to confirm the copies, Media Mail shipping, and payment. Copies stay on hold until we write back.</p>
+        <p>If you do not hear from us, write <a href="mailto:shop@belowthewinds.com">shop@belowthewinds.com</a>.</p>
+        <p><a class="btn solid" href="catalog.html">Back to the catalog</a></p>
+      </div>
+
+      <div id="checkout-form-wrap" class="checkout-layout">
+        <form id="order-form" name="orders" method="POST" action="/thanks.html" netlify netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="orders" />
+          <p class="hp"><label>Don’t fill this <input name="bot-field" /></label></p>
+
+          <label for="name">Name</label>
+          <input id="name" name="name" autocomplete="name" required />
+
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" required />
+
+          <label for="phone">Phone <span class="opt">(optional)</span></label>
+          <input id="phone" name="phone" type="tel" autocomplete="tel" />
+
+          <label for="address">Street address</label>
+          <input id="address" name="address" autocomplete="shipping street-address" required />
+
+          <div class="field-row">
+            <div>
+              <label for="city">City</label>
+              <input id="city" name="city" autocomplete="shipping address-level2" required />
+            </div>
+            <div>
+              <label for="state">State</label>
+              <input id="state" name="state" autocomplete="shipping address-level1" required />
+            </div>
+            <div>
+              <label for="zip">ZIP</label>
+              <input id="zip" name="zip" autocomplete="shipping postal-code" required />
+            </div>
+          </div>
+
+          <label for="country">Country</label>
+          <input id="country" name="country" value="United States" autocomplete="shipping country-name" required />
+
+          <label for="notes">Order notes <span class="opt">(optional)</span></label>
+          <textarea id="notes" name="notes" rows="3" placeholder="Edition questions, gate codes, hold requests"></textarea>
+
+          <input type="hidden" name="shipping_method" value="USPS Media Mail from Johnson, AR" />
+          <input type="hidden" name="order_total" id="order-total-field" value="" />
+          <input type="hidden" name="items_json" id="items-json" value="" />
+          <label for="items-text">Titles in this order</label>
+          <textarea id="items-text" name="items" rows="4" readonly></textarea>
+
+          <p class="note">Ships USPS Media Mail from Johnson, Arkansas. Media Mail is for books, within the United States, and is slower than Priority — typically several business days after we pack. Handle time is one business day. This form holds the copies; we email to confirm payment.</p>
+          <p class="note">If the form does not go through, write <a href="mailto:shop@belowthewinds.com">shop@belowthewinds.com</a> with your name, address, and titles.</p>
+          <p id="order-error" class="form-error" hidden></p>
+          <button class="btn solid" type="submit">Send order</button>
+        </form>
+
+        <aside class="order-summary">
+          <p class="kicker">Order</p>
+          <h3>Summary</h3>
+          <ul id="order-summary-lines" class="summary-lines"></ul>
+          <p class="cart-total">Total <span id="order-summary-total">$0.00</span></p>
+          <p class="note">One used copy per title. Packed in Johnson.</p>
+        </aside>
+      </div>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <div>Below the Winds · <a href="mailto:shop@belowthewinds.com">shop@belowthewinds.com</a></div>
+      <div>Packed in Johnson, Arkansas</div>
+    </div>
+  </footer>
+  <script src="js/config.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/checkout.js"></script>
+</body>
+</html>

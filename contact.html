@@ -4,6 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contact — Below the Winds</title>
+  <meta name="description" content="Wants, editions, and order questions for Below the Winds in Johnson, Arkansas." />
   <link rel="stylesheet" href="css/site.css" />
 </head>
 <body>
@@ -13,6 +14,7 @@
       <nav>
         <a href="index.html">Home</a>
         <a href="catalog.html">Catalog</a>
+        <a href="cart.html">Cart <span class="cart-count" data-cart-count aria-live="polite">0</span></a>
         <a href="about.html">About</a>
         <a href="shipping.html">Shipping</a>
         <a href="contact.html" aria-current="page">Contact</a>
@@ -23,10 +25,10 @@
     <div class="wrap">
       <p class="kicker">Write the shop</p>
       <h2>Contact</h2>
-      <p class="note">For order issues, use Amazon first. For wants, editions, and wholesale questions, use this form or shop@belowthewinds.com.</p>
-      <form name="contact" method="POST" netlify netlify-honeypot="bot-field">
+      <p class="note">Wants, editions, and questions about an order on this site: use this form or <a href="mailto:shop@belowthewinds.com">shop@belowthewinds.com</a>. To buy a copy that is on the shelf, use the catalog and checkout.</p>
+      <form name="contact" method="POST" action="/thanks.html" netlify netlify-honeypot="bot-field">
         <input type="hidden" name="form-name" value="contact" />
-        <p style="display:none"><label>Don’t fill this <input name="bot-field" /></label></p>
+        <p class="hp"><label>Don’t fill this <input name="bot-field" /></label></p>
         <label for="name">Name</label>
         <input id="name" name="name" required />
         <label for="email">Email</label>
@@ -39,9 +41,11 @@
   </main>
   <footer class="site-footer">
     <div class="wrap">
-      <div>shop@belowthewinds.com</div>
-      <div>Amazon store name: BelowtheWinds</div>
+      <div><a href="mailto:shop@belowthewinds.com">shop@belowthewinds.com</a></div>
+      <div>Johnson, Arkansas</div>
     </div>
   </footer>
+  <script src="js/config.js"></script>
+  <script src="js/cart.js"></script>
 </body>
 </html>

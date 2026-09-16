@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Below the Winds — scholarly used books</title>
-  <meta name="description" content="Used books for people who still need the edition that went out of print. Packed in Northwest Arkansas. Sold on Amazon." />
+  <meta name="description" content="Used books for people who still need the edition that went out of print. Packed in Johnson, Northwest Arkansas. Buy on this site." />
   <link rel="stylesheet" href="css/site.css" />
 </head>
 <body>
@@ -14,6 +14,7 @@
       <nav>
         <a href="index.html" aria-current="page">Home</a>
         <a href="catalog.html">Catalog</a>
+        <a href="cart.html">Cart <span class="cart-count" data-cart-count aria-live="polite">0</span></a>
         <a href="about.html">About</a>
         <a href="shipping.html">Shipping</a>
         <a href="contact.html">Contact</a>
@@ -25,10 +26,10 @@
       <div class="wrap">
         <p class="kicker">A scholarly bookshop</p>
         <h1>Used books for people who still need the edition that went out of print.</h1>
-        <p class="lede">Below the Winds is a curated used and out-of-print shop: history, area studies, criticism, and the monograph your syllabus still cites. Amazon is the cash register. The catalog lives here.</p>
+        <p class="lede">Below the Winds is a personal used and out-of-print shop in Johnson, Northwest Arkansas: history, area studies, criticism, and the monograph your syllabus still cites. This site is the store. Each listing is one copy, described as it sits on the shelf.</p>
         <div class="actions">
           <a class="btn solid" href="catalog.html">Browse the catalog</a>
-          <a class="btn ghost" id="amazon-store" href="https://www.amazon.com/s?k=Below+the+Winds+Books" target="_blank" rel="noopener">Amazon storefront</a>
+          <a class="btn ghost" href="shipping.html">How we ship</a>
         </div>
       </div>
     </section>
@@ -49,9 +50,9 @@
             <h3>World &amp; political economy</h3>
             <p>Braudel, Hobsbawm, Polanyi, Graeber. Scholarly nonfiction before mass-market fiction.</p>
           </a>
-          <a class="card" href="catalog.html">
-            <h3>Buy on Amazon</h3>
-            <p>Each title links to Amazon. Fulfillment by merchant, Media Mail from Johnson.</p>
+          <a class="card" href="shipping.html">
+            <h3>Packed in Johnson</h3>
+            <p>USPS Media Mail from Northwest Arkansas. One used copy per title. Honest notes, no filters.</p>
           </a>
         </div>
       </div>
@@ -59,21 +60,19 @@
     <section class="section">
       <div class="wrap prose">
         <p class="kicker">How it works</p>
-        <h2>The store is here. The sale happens there.</h2>
-        <p>Phase 1 of the shop is Amazon FBM. You read the note here, then buy the copy on Amazon. When the live seller storefront is attached, the Amazon button on every card will go to that exact listing instead of a title search.</p>
-        <p>Packed in Northwest Arkansas. Media Mail. No invoice stuffed in the gutter.</p>
+        <h2>Read the note. Add the copy. We pack it here.</h2>
+        <p>This site is the store. You choose a used copy from the catalog, add it to a cart, and send an order. We confirm by email, then pack from Johnson. Default service is USPS Media Mail. Handle time is one business day.</p>
+        <p>No invoice stuffed in the gutter.</p>
       </div>
     </section>
   </main>
   <footer class="site-footer">
     <div class="wrap">
-      <div>Below the Winds · shop@belowthewinds.com</div>
-      <div>Catalog layer: PageKeep</div>
+      <div>Below the Winds · <a href="mailto:shop@belowthewinds.com">shop@belowthewinds.com</a></div>
+      <div>Packed in Johnson, Arkansas</div>
     </div>
   </footer>
   <script src="js/config.js"></script>
-  <script>
-    document.getElementById("amazon-store").href = window.BTW.amazonStoreUrl;
-  </script>
+  <script src="js/cart.js"></script>
 </body>
 </html>

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cart — Below the Winds</title>
+  <meta name="description" content="Your cart at Below the Winds, the personal used-book shop in Johnson, Arkansas." />
+  <link rel="stylesheet" href="css/site.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="wordmark" href="index.html">Below the Winds<span>Johnson · Northwest Arkansas</span></a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="catalog.html">Catalog</a>
+        <a href="cart.html" aria-current="page">Cart <span class="cart-count" data-cart-count aria-live="polite">0</span></a>
+        <a href="about.html">About</a>
+        <a href="shipping.html">Shipping</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <main class="section">
+    <div class="wrap">
+      <p class="kicker">Your copies</p>
+      <h2>Cart</h2>
+      <div id="cart-empty">
+        <p class="note">The cart is empty. Each title is one used copy; add it from the catalog.</p>
+        <p><a class="btn solid" href="catalog.html">Browse the catalog</a></p>
+      </div>
+      <div id="cart-full" hidden>
+        <div id="cart-lines" class="cart-lines"></div>
+        <div class="cart-footer">
+          <p class="cart-total">Total <span id="cart-total">$0.00</span></p>
+          <p class="note">USPS Media Mail from Johnson. You will confirm address and contact on the next page.</p>
+          <p><a class="btn solid" href="checkout.html">Check out</a></p>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <div>Below the Winds · <a href="mailto:shop@belowthewinds.com">shop@belowthewinds.com</a></div>
+      <div>Packed in Johnson, Arkansas</div>
+    </div>
+  </footer>
+  <script src="js/config.js"></script>
+  <script src="js/cart.js"></script>
+</body>
+</html>

@@ -16,8 +16,3 @@
   from = "/shop"
   to = "/catalog.html"
   status = 301
-
-[[redirects]]
-  from = "/amazon"
-  to = "https://www.amazon.com/s?k=BelowtheWinds&i=stripbooks"
-  status = 302
