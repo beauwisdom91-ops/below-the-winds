@@ -47,6 +47,7 @@ describe("netlify forms", () => {
     assert.match(contact, /name="contact"/);
     assert.match(wants, /name="wants"/);
     assert.match(checkout, /name="order"/);
+    assert.match(checkout, /id="pay-card"/);
     assert.match(forms, /name="contact"/);
     assert.match(forms, /name="wants"/);
     assert.match(forms, /name="order"/);

@@ -1,9 +1,13 @@
 [build]
   publish = "."
-  command = "echo ready"
+  command = "npm ci --omit=dev"
 
 [build.environment]
   NODE_VERSION = "20"
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
 
 [[headers]]
   for = "/*"
@@ -80,6 +84,11 @@
 [[redirects]]
   from = "/thanks"
   to = "/thanks.html"
+  status = 200
+
+[[redirects]]
+  from = "/sold"
+  to = "/sold.html"
   status = 200
 
 [[redirects]]
