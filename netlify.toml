@@ -1,2 +1,23 @@
 [build]
   publish = "."
+  command = "echo ready"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[redirects]]
+  from = "/shop"
+  to = "/catalog.html"
+  status = 301
+
+[[redirects]]
+  from = "/amazon"
+  to = "https://www.amazon.com/s?k=BelowtheWinds&i=stripbooks"
+  status = 302

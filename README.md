@@ -1,10 +1,12 @@
 # Below the Winds
 
-Public catalog for the scholarly bookshop. Amazon is the register. This site is the face.
+Public catalog for the scholarly used-book shop in Johnson / Northwest Arkansas.
+Amazon is the register. This site is the face.
 
-Live (Netlify project): https://below-the-winds.netlify.app
-Repo: https://github.com/beauwisdom91-ops/below-the-winds
+- Live: https://below-the-winds.netlify.app
+- Source: this repo
+- Interim shop email: beau.wisdom91+shop@gmail.com
+- Amazon store name: BelowtheWinds
 
-Custom domain to attach: belowthewinds.com
-Amazon store name: BelowtheWinds
-Shop email (after domain): shop@belowthewinds.com
+When Seller Central is live, put the storefront URL and seller ID in `js/config.js`.
+When a custom domain exists, swap the email there too.
