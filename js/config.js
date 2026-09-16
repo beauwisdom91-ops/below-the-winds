@@ -1,7 +1,7 @@
 window.BTW = {
   brand: "Below the Winds",
   location: "Johnson / Northwest Arkansas",
-  email: "beau.wisdom91+shop@gmail.com",
+  email: "beauraywisd@proton.me",
   amazonStoreName: "BelowtheWinds",
   amazonStoreUrl: "https://www.amazon.com/s?k=BelowtheWinds&i=stripbooks",
   amazonSellerId: ""
