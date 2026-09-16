@@ -16,6 +16,7 @@
       <nav>
         <a href="index.html">Home</a>
         <a href="catalog.html">Catalog</a>
+        <a href="cart.html">Cart <span class="cart-count" data-cart-count aria-live="polite">0</span></a>
         <a href="wants.html">Wants</a>
         <a href="about.html">About</a>
         <a href="shipping.html">Shipping</a>
@@ -27,7 +28,7 @@
     <div class="wrap">
       <p class="kicker">Write the shop</p>
       <h1>Contact</h1>
-      <p class="note">For paid Amazon orders, use Amazon first. For editions, wholesale, and catalog questions, use this form or <a data-btw-email href="mailto:beauraywisd@proton.me">beauraywisd@proton.me</a>. Title hunts go on the <a href="wants.html">want list</a>.</p>
+      <p class="note">For paid Amazon orders, use Amazon first. For editions, wholesale, and shop-till questions, use this form or <a data-btw-email href="mailto:beauraywisd@proton.me">beauraywisd@proton.me</a>. Title hunts go on the <a href="wants.html">want list</a>.</p>
       <form name="contact" method="POST" action="/thanks" data-netlify="true" netlify-honeypot="bot-field">
         <input type="hidden" name="form-name" value="contact" />
         <p class="hp"><label>Don’t fill this <input name="bot-field" /></label></p>
@@ -48,5 +49,6 @@
     </div>
   </footer>
   <script src="js/config.js"></script>
+  <script src="js/cart.js"></script>
 </body>
 </html>

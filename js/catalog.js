@@ -3,31 +3,24 @@ async function loadBooks() {
   return res.json();
 }
 
-function escapeHtml(s) {
-  return String(s).replace(/[&<>"']/g, function (c) {
-    return ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c];
-  });
-}
-
-function money(n) {
-  return "$" + Number(n).toFixed(2);
-}
-
 function saleState(book) {
   const status = String(book.status || "in_shop").toLowerCase();
   if (status === "sold") return "sold";
   if (status === "seeking") return "seeking";
   if (status === "held" || status === "reserved") return "held";
-  if (status === "in_shop" || status === "available" || status === "listed") return "for_sale";
+  if (window.BTWCart && window.BTWCart.has(book.id)) return "in_cart";
+  if (window.BTWCart && window.BTWCart.isForSale(book)) return "for_sale";
   return "seeking";
 }
 
 function bookCta(book) {
+  const esc = window.BTWCart.escapeHtml;
   const state = saleState(book);
   if (state === "sold") return "<span class=\"btn ghost\" aria-disabled=\"true\">Sold</span>";
   if (state === "seeking") return "<a class=\"btn ghost\" href=\"wants.html\">Seeking — ask</a>";
   if (state === "held") return "<span class=\"btn ghost\" aria-disabled=\"true\">Held</span>";
-  return "";
+  if (state === "in_cart") return "<a class=\"btn ghost\" href=\"cart.html\">In cart</a>";
+  return "<button class=\"btn solid\" type=\"button\" data-add=\"" + esc(book.id) + "\">Add to cart</button>";
 }
 
 function renderBooks(books, mount) {
@@ -36,22 +29,37 @@ function renderBooks(books, mount) {
     mount.innerHTML = "<p class='note'>No titles on this shelf yet.</p>";
     return;
   }
+  const esc = window.BTWCart.escapeHtml;
   mount.innerHTML = books.map(function (b) {
     const href = window.amazonHref(b);
     const state = saleState(b);
     const sku = b.sku || ("BTW-" + b.id);
-    return "<article class=\"book\" data-shelf=\"" + escapeHtml(b.shelf) + "\" data-id=\"" + escapeHtml(b.id) + "\" data-status=\"" + escapeHtml(state) + "\">" +
-      "<div class=\"meta\">" + escapeHtml(b.shelf) + " · " + escapeHtml(b.condition) + " · " + escapeHtml(sku) + "</div>" +
-      "<h3><cite>" + escapeHtml(b.title) + "</cite></h3>" +
-      "<p class=\"author\">" + escapeHtml(b.author) + "</p>" +
-      "<p class=\"note\">" + escapeHtml(b.note || "") + "</p>" +
+    return "<article class=\"book\" data-shelf=\"" + esc(b.shelf) + "\" data-id=\"" + esc(b.id) + "\" data-status=\"" + esc(state) + "\">" +
+      "<div class=\"meta\">" + esc(b.shelf) + " · " + esc(b.condition) + " · " + esc(sku) + "</div>" +
+      "<h3><cite>" + esc(b.title) + "</cite></h3>" +
+      "<p class=\"author\">" + esc(b.author) + "</p>" +
+      "<p class=\"note\">" + esc(b.note || "") + "</p>" +
       "<div class=\"row\">" +
-      "<span class=\"price\">" + money(b.price) + "</span>" +
+      "<span class=\"price\">" + window.BTWCart.money(b.price) + "</span>" +
       "<span class=\"actions-inline\">" +
       bookCta(b) +
-      "<a class=\"btn ghost\" href=\"" + escapeHtml(href) + "\" target=\"_blank\" rel=\"noopener\">Amazon</a>" +
+      "<a class=\"btn ghost\" href=\"" + esc(href) + "\" target=\"_blank\" rel=\"noopener\">Amazon</a>" +
       "</span></div></article>";
   }).join("");
+}
+
+function bindAdd(mount, books, redraw) {
+  if (!mount) return;
+  mount.addEventListener("click", function (e) {
+    const btn = e.target.closest("[data-add]");
+    if (!btn) return;
+    const id = btn.getAttribute("data-add");
+    const book = books.find(function (b) { return String(b.id) === String(id); });
+    if (book) {
+      window.BTWCart.add(book);
+      redraw();
+    }
+  });
 }
 
 function bindCatalog(books) {
@@ -85,16 +93,19 @@ function bindCatalog(books) {
     });
   });
   if (search) search.addEventListener("input", apply);
+  bindAdd(mount, books, apply);
   apply();
 }
 
 function bindFeatured(books) {
   const mount = document.getElementById("featured");
   if (!mount) return;
-  const featured = books.filter(function (b) {
-    return b.featured && saleState(b) === "for_sale";
-  });
-  renderBooks(featured, mount);
+  const featured = books.filter(function (b) { return b.featured && window.BTWCart.isForSale(b); });
+  const redraw = function () {
+    renderBooks(featured, mount);
+  };
+  bindAdd(mount, books, redraw);
+  redraw();
 }
 
 document.addEventListener("DOMContentLoaded", async function () {

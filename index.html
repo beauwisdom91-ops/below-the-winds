@@ -4,10 +4,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Below the Winds — scholarly used books</title>
-  <meta name="description" content="Used and out-of-print scholarly books packed in Johnson, Northwest Arkansas. Amazon FBM is the till — not FBA." />
+  <meta name="description" content="Used and out-of-print scholarly books packed in Johnson, Northwest Arkansas. Add a copy to the bag; Amazon FBM is the other till." />
   <link rel="canonical" href="https://below-the-winds.netlify.app/" />
   <meta property="og:title" content="Below the Winds — scholarly used books" />
-  <meta property="og:description" content="Curated used books from Johnson, Arkansas. Catalog here; Amazon FBM is the register." />
+  <meta property="og:description" content="Curated used books from Johnson, Arkansas. Bag and checkout on this site." />
   <meta property="og:type" content="website" />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="css/site.css" />
@@ -23,6 +23,7 @@
       <nav>
         <a href="index.html" aria-current="page">Home</a>
         <a href="catalog.html">Catalog</a>
+        <a href="cart.html">Cart <span class="cart-count" data-cart-count aria-live="polite">0</span></a>
         <a href="wants.html">Wants</a>
         <a href="about.html">About</a>
         <a href="shipping.html">Shipping</a>
@@ -35,18 +36,18 @@
       <div class="wrap">
         <p class="kicker">A scholarly bookshop</p>
         <h1>Used books for people who still need the edition that went out of print.</h1>
-        <p class="lede">Below the Winds is a personal used and out-of-print shop in Johnson, Northwest Arkansas: history, area studies, criticism, and the monograph your syllabus still cites. The catalog lives here. Amazon Fulfilled by Merchant is the till — not FBA.</p>
+        <p class="lede">Below the Winds is a personal used and out-of-print shop in Johnson, Northwest Arkansas: history, area studies, criticism, and the monograph your syllabus still cites. This site is the bag. Amazon Fulfilled by Merchant is the other till — not FBA.</p>
         <div class="actions">
           <a class="btn solid" href="catalog.html">Browse the catalog</a>
-          <a class="btn ghost" data-btw-amazon href="https://www.amazon.com/s?k=BelowtheWinds&i=stripbooks" target="_blank" rel="noopener">Amazon storefront</a>
+          <a class="btn ghost" href="cart.html">Open the cart</a>
         </div>
       </div>
     </section>
     <section class="section">
       <div class="wrap">
         <p class="kicker">On the desk</p>
-        <h2>Copies on the shelf tonight.</h2>
-        <p class="note">Each card is one used copy. Amazon is the till until the bag lands. Media Mail is a flat <span data-btw-shipping>$4.75</span> from Johnson when we charge shipping ourselves.</p>
+        <h2>Copies you can bag tonight.</h2>
+        <p class="note">Each card is one used copy. Add it, then send a hold at checkout. Media Mail is a flat <span data-btw-shipping>$4.75</span> from Johnson.</p>
         <div class="books" id="featured"></div>
       </div>
     </section>
@@ -69,7 +70,7 @@
           </a>
           <a class="card" href="catalog.html">
             <h3>The full catalog</h3>
-            <p>PageKeep is this JSON. Amazon listings follow as Individual FBM, store name BelowtheWinds.</p>
+            <p>PageKeep is this JSON. Add a copy here. Amazon listings follow as Individual FBM.</p>
           </a>
         </div>
       </div>
@@ -77,9 +78,10 @@
     <section class="section">
       <div class="wrap prose">
         <p class="kicker">How it works</p>
-        <h2>Read the note. Buy the copy. We pack it here.</h2>
-        <p>You choose a used copy from the catalog, then buy it on Amazon until the shop till on this site is live. Default service is USPS Media Mail, a flat <span data-btw-shipping>$4.75</span> from Johnson when we charge shipping ourselves. Handle time is one business day.</p>
-        <p>Amazon is Individual, Fulfilled by Merchant, store name <strong>BelowtheWinds</strong>. Sell from sell.amazon.com. Do not turn on FBA.</p>
+        <h2>Read the note. Add the copy. We pack it here.</h2>
+        <p>You choose a used copy from the catalog, add it to the cart, and send a hold. We confirm by email, then pack from Johnson. Default service is USPS Media Mail. Handle time is one business day.</p>
+        <p>Card and PayPal are config slots. When a Stripe Payment Link or PayPal.me is pasted into <code>js/config.js</code>, those buttons light up on checkout. Until then, the hold form is the till.</p>
+        <p>Amazon is still the scale register, Individual, Fulfilled by Merchant, store name <strong>BelowtheWinds</strong>. Sell from sell.amazon.com. Do not turn on FBA.</p>
         <p hidden data-affiliate-note>Some Amazon links may be Associates referrals. See <a href="affiliates.html">Partners</a>.</p>
       </div>
     </section>
@@ -91,6 +93,7 @@
     </div>
   </footer>
   <script src="js/config.js"></script>
+  <script src="js/cart.js"></script>
   <script src="js/catalog.js"></script>
 </body>
 </html>

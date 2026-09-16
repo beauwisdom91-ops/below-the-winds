@@ -17,6 +17,7 @@
       <nav>
         <a href="index.html">Home</a>
         <a href="catalog.html" aria-current="page">Catalog</a>
+        <a href="cart.html">Cart <span class="cart-count" data-cart-count aria-live="polite">0</span></a>
         <a href="wants.html">Wants</a>
         <a href="about.html">About</a>
         <a href="shipping.html">Shipping</a>
@@ -28,7 +29,7 @@
     <div class="wrap">
       <p class="kicker">PageKeep catalog</p>
       <h1>On the shelf</h1>
-      <p class="note">Each listing is one used copy in Johnson, SKU <code>BTW-{id}</code>. Amazon is a title search until Seller Central FBM listings replace it. Titles marked seeking are not for sale — ask on the <a href="wants.html">want list</a>.</p>
+      <p class="note">Each listing is one used copy in Johnson, SKU <code>BTW-{id}</code>. <strong>Add to cart</strong> holds it at checkout. Amazon is a title search until Seller Central FBM listings replace it. Titles marked seeking are not for sale.</p>
       <div class="toolbar">
         <button class="chip on" type="button" data-shelf="All">All</button>
         <button class="chip" type="button" data-shelf="Southeast Asia">Southeast Asia</button>
@@ -56,6 +57,7 @@
     </div>
   </footer>
   <script src="js/config.js"></script>
+  <script src="js/cart.js"></script>
   <script src="js/catalog.js"></script>
 </body>
 </html>
