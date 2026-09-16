@@ -79,66 +79,29 @@
     if (!mount) return;
     var cfg = window.BTW || {};
     var bits = [];
+    var card = paymentHref(cfg.stripePaymentLink);
     var paypal = paymentHref(cfg.paypalMe);
     var cash = paymentHref(cfg.cashApp);
-    bits.push("<button class=\"btn solid\" type=\"button\" id=\"pay-card-aside\">Pay with card</button>");
+    if (card) {
+      bits.push("<a class=\"btn solid\" href=\"" + window.BTWCart.escapeHtml(card) + "\" target=\"_blank\" rel=\"noopener\">Pay with card</a>");
+    }
     if (paypal) {
       bits.push("<a class=\"btn ghost\" href=\"" + window.BTWCart.escapeHtml(paypal) + "\" target=\"_blank\" rel=\"noopener\">PayPal</a>");
     }
     if (cash) {
       bits.push("<a class=\"btn ghost\" href=\"" + window.BTWCart.escapeHtml(cash) + "\" target=\"_blank\" rel=\"noopener\">Cash App</a>");
     }
-    mount.innerHTML = "<p class=\"kicker\">Pay now</p><div class=\"actions\">" + bits.join("") + "</div>" +
-      "<p class=\"note\">Card checkout packs from Johnson. If Stripe is not connected yet, send the hold form and we invoice from the shop email.</p>";
-  }
-
-  function startCardCheckout() {
-    var items = window.BTWCart.items();
-    var errNote = document.getElementById("order-error");
-    if (!items.length) {
-      showEmpty();
+    if (!bits.length) {
+      mount.innerHTML = "<p class=\"note\">Card and PayPal links are empty until the shop pastes them into <code>js/config.js</code>. Send the hold form — we invoice from the shop email.</p>";
       return;
     }
-    if (errNote) errNote.hidden = true;
-    var ids = items.map(function (it) { return String(it.id); });
-    fetch("/api/checkout", {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify({ bookIds: ids })
-    }).then(function (res) {
-      return res.json().then(function (data) {
-        return { res: res, data: data };
-      }).catch(function () {
-        return { res: res, data: {} };
-      });
-    }).then(function (out) {
-      if (out.res.ok && out.data.url) {
-        window.location.href = out.data.url;
-        return;
-      }
-      if (out.res.status === 503) {
-        showError(out.data.message || "Card checkout is not live yet. Send the hold form and we will invoice you.");
-        return;
-      }
-      if (out.res.status === 409) {
-        showError("A copy in the bag is already held or sold. Remove it and try again.");
-        return;
-      }
-      showError("Card checkout could not start. Send the hold form, or write the shop email.");
-    }).catch(function () {
-      showError("Card checkout could not start. Send the hold form.");
-    });
+    mount.innerHTML = "<p class=\"kicker\">Pay now</p><div class=\"actions\">" + bits.join("") + "</div>" +
+      "<p class=\"note\">Pay, then send the hold form so we know which copies to pack.</p>";
   }
 
   document.addEventListener("DOMContentLoaded", function () {
     var form = document.getElementById("order-form");
     paintPaySlots();
-    document.addEventListener("click", function (e) {
-      if (e.target.closest("#pay-card") || e.target.closest("#pay-card-aside")) {
-        e.preventDefault();
-        startCardCheckout();
-      }
-    });
     if (!form) return;
 
     if (!window.BTWCart.items().length) {

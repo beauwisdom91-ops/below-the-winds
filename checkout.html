@@ -88,13 +88,10 @@
           <label for="items-text">Titles in this order</label>
           <textarea id="items-text" name="items" rows="4" readonly></textarea>
 
-          <p class="note">Ships USPS Media Mail from Johnson, Arkansas — a flat <span data-btw-shipping>$4.75</span> for the bag. Media Mail is for books, within the United States, and is slower than Priority. Handle time is one business day. <strong>Pay with card</strong> charges now via Stripe. The hold form invoices you if card checkout is not live yet.</p>
+          <p class="note">Ships USPS Media Mail from Johnson, Arkansas — a flat <span data-btw-shipping>$4.75</span> for the bag. Media Mail is for books, within the United States, and is slower than Priority. Handle time is one business day. This form holds the copies; we email to confirm payment.</p>
           <p class="note">If the form does not go through, write <a data-btw-email href="mailto:beauraywisd@proton.me">beauraywisd@proton.me</a> with your name, address, and titles.</p>
           <p id="order-error" class="form-error" hidden></p>
-          <div class="actions">
-            <button class="btn solid" type="button" id="pay-card">Pay with card</button>
-            <button class="btn ghost" type="submit">Send hold / invoice request</button>
-          </div>
+          <button class="btn solid" type="submit">Send hold / invoice request</button>
         </form>
 
         <aside class="order-summary">
