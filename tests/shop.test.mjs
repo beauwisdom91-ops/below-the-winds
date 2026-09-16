@@ -1,12 +1,17 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { describe, it } from "node:test";
-import { amazonHref, esc, money, SHIPPING_CENTS } from "../js/shop.mjs";
 
 const books = JSON.parse(readFileSync(new URL("../data/books.json", import.meta.url), "utf8"));
+const config = readFileSync(new URL("../js/config.js", import.meta.url), "utf8");
+const checkout = readFileSync(new URL("../checkout.html", import.meta.url), "utf8");
+const wants = readFileSync(new URL("../wants.html", import.meta.url), "utf8");
+const contact = readFileSync(new URL("../contact.html", import.meta.url), "utf8");
+const forms = readFileSync(new URL("../__forms.html", import.meta.url), "utf8");
+const gitignore = readFileSync(new URL("../.gitignore", import.meta.url), "utf8");
 
 describe("catalog data", () => {
-  it("has unique ids, prices, and ISBNs on every copy", () => {
+  it("keeps the GitHub 38 copies, SKUs, and in_shop — no invented ISBNs or in_stock", () => {
     const ids = new Set();
     for (const book of books) {
       assert.ok(book.id, "id");
@@ -14,44 +19,41 @@ describe("catalog data", () => {
       ids.add(book.id);
       assert.equal(typeof book.price, "number");
       assert.ok(book.price > 0);
-      assert.match(book.isbn10, /^[0-9]{9}[0-9X]$/);
-      assert.match(book.isbn13, /^978[0-9]{10}$/);
+      assert.equal(book.sku, "BTW-" + book.id);
       assert.equal(book.status, "in_shop");
+      assert.equal(book.isbn10, undefined);
+      assert.equal(book.isbn13, undefined);
+      assert.notEqual(book.status, "in_stock");
     }
     assert.equal(books.length, 38);
-    assert.ok(books.filter((b) => b.featured).length >= 4);
+    assert.ok(books.filter((b) => b.featured).length >= 1);
   });
 });
 
-describe("amazonHref", () => {
-  const reid = books.find((b) => b.id === "299");
-
-  it("uses ISBN search when no seller id is set", () => {
-    const href = amazonHref(reid, { amazonSellerId: "" });
-    assert.equal(href, "https://www.amazon.com/s?k=0300046402&i=stripbooks");
-  });
-
-  it("prefers this shop's offer listing when seller id exists", () => {
-    const href = amazonHref(reid, { amazonSellerId: "AEXAMPLE" });
-    assert.equal(
-      href,
-      "https://www.amazon.com/gp/offer-listing/0300046402?me=AEXAMPLE&condition=used",
-    );
-  });
-
-  it("falls back to title search without ISBN", () => {
-    const href = amazonHref({ title: "Siam Mapped", author: "Thongchai" }, {});
-    assert.ok(href.includes("Siam"));
-    assert.ok(href.includes("stripbooks"));
+describe("config slots", () => {
+  it("keeps proton email, BelowtheWinds, $4.75 shipping, empty payment URLs", () => {
+    assert.match(config, /email:\s*"beauraywisd@proton\.me"/);
+    assert.match(config, /amazonStoreName:\s*"BelowtheWinds"/);
+    assert.match(config, /shippingFlat:\s*4\.75/);
+    assert.match(config, /stripePaymentLink:\s*""/);
+    assert.match(config, /paypalMe:\s*""/);
+    assert.match(config, /cashApp:\s*""/);
+    assert.doesNotMatch(config, /beau\.wisdom91\+shop@gmail\.com/);
   });
 });
 
-describe("display helpers", () => {
-  it("escapes HTML", () => {
-    assert.equal(esc("<cite>"), "&lt;cite&gt;");
+describe("netlify forms", () => {
+  it("registers contact, wants, and order", () => {
+    assert.match(contact, /name="contact"/);
+    assert.match(wants, /name="wants"/);
+    assert.match(checkout, /name="order"/);
+    assert.match(forms, /name="contact"/);
+    assert.match(forms, /name="wants"/);
+    assert.match(forms, /name="order"/);
+    assert.doesNotMatch(checkout, /name="orders"/);
   });
-  it("formats money and keeps Media Mail at $4.99", () => {
-    assert.equal(money(30), "$30.00");
-    assert.equal(SHIPPING_CENTS, 499);
+
+  it("ignores the .netlify directory", () => {
+    assert.match(gitignore, /\.netlify/);
   });
 });

@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Catalog — Below the Winds</title>
-  <meta name="description" content="On-the-shelf used scholarly books from Below the Winds. Buy this copy or open the Amazon ISBN." />
+  <meta name="description" content="PageKeep catalog of used scholarly books from Below the Winds. One copy per title. Bag it here." />
   <link rel="canonical" href="https://below-the-winds.netlify.app/catalog" />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="css/site.css" />
@@ -17,7 +17,8 @@
       <nav>
         <a href="index.html">Home</a>
         <a href="catalog.html" aria-current="page">Catalog</a>
-        <a href="collections.html">Collections</a>
+        <a href="cart.html">Cart <span class="cart-count" data-cart-count aria-live="polite">0</span></a>
+        <a href="wants.html">Wants</a>
         <a href="about.html">About</a>
         <a href="shipping.html">Shipping</a>
         <a href="contact.html">Contact</a>
@@ -28,8 +29,7 @@
     <div class="wrap">
       <p class="kicker">PageKeep catalog</p>
       <h1>On the shelf</h1>
-      <p class="note">Prices are this shop’s targets for the copy in Johnson. <strong>Buy this copy</strong> is the shop till. Amazon is the ISBN search until Seller Central listings replace it.</p>
-      <p class="banner" id="canceled" hidden>Checkout was canceled. The copy is still on the shelf.</p>
+      <p class="note">Each listing is one used copy in Johnson. <strong>Add to cart</strong> holds it at checkout. Amazon is a title search until Seller Central FBM listings replace it. Titles marked seeking are not for sale.</p>
       <div class="toolbar">
         <button class="chip on" type="button" data-shelf="All">All</button>
         <button class="chip" type="button" data-shelf="Southeast Asia">Southeast Asia</button>
@@ -52,40 +52,12 @@
   </main>
   <footer class="site-footer">
     <div class="wrap">
-      <div>Below the Winds · <a data-btw-email href="mailto:beau.wisdom91+shop@gmail.com">beau.wisdom91+shop@gmail.com</a></div>
-      <div>Amazon seller name: BelowtheWinds</div>
+      <div>Below the Winds · <a data-btw-email href="mailto:beauraywisd@proton.me">beauraywisd@proton.me</a></div>
+      <div>Amazon store name: BelowtheWinds · <a href="collections.html">Collections</a></div>
     </div>
   </footer>
-  <dialog id="buy-dialog" closedby="any" aria-labelledby="buy-heading">
-    <div class="dialog-head">
-      <div>
-        <p class="kicker">This copy</p>
-        <h2 id="buy-heading"></h2>
-        <p class="note" id="buy-meta"></p>
-      </div>
-      <form method="dialog"><button class="btn ghost" value="close">Close</button></form>
-    </div>
-    <p class="note" id="buy-note" hidden></p>
-    <div class="actions">
-      <button class="btn solid" type="button" id="buy-pay">Pay with card</button>
-      <a class="btn ghost" id="buy-amazon" target="_blank" rel="noopener">Amazon used copies</a>
-    </div>
-    <form name="order" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/thanks">
-      <input type="hidden" name="form-name" value="order" />
-      <p hidden><label>Don’t fill this <input name="bot-field" /></label></p>
-      <input type="hidden" id="order-book-id" name="book_id" />
-      <input type="hidden" id="order-title" name="title" />
-      <p class="kicker">Or request an invoice</p>
-      <label for="order-name">Name</label>
-      <input id="order-name" name="name" autocomplete="name" required />
-      <label for="order-email">Email</label>
-      <input id="order-email" name="email" type="email" autocomplete="email" required />
-      <label for="order-message">Note (optional)</label>
-      <textarea id="order-message" name="message" rows="3"></textarea>
-      <button class="btn ghost" type="submit">Request this copy</button>
-    </form>
-  </dialog>
   <script src="js/config.js"></script>
-  <script type="module" src="js/catalog.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/catalog.js"></script>
 </body>
 </html>

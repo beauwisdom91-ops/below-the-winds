@@ -7,11 +7,9 @@
     "price": 30,
     "condition": "Used - Good",
     "note": "The book that named the shop.",
-    "isbn10": "0300046402",
-    "isbn13": "9780300046403",
-    "featured": true,
+    "sku": "BTW-299",
     "status": "in_shop",
-    "sku": "BTW-299"
+    "featured": true
   },
   {
     "id": "491",
@@ -21,11 +19,9 @@
     "price": 32,
     "condition": "Used - Good",
     "note": "Completes the Reid set.",
-    "isbn10": "030005412X",
-    "isbn13": "9780300054125",
-    "featured": false,
+    "sku": "BTW-491",
     "status": "in_shop",
-    "sku": "BTW-491"
+    "featured": false
   },
   {
     "id": "273",
@@ -35,11 +31,9 @@
     "price": 28,
     "condition": "Used - Very Good",
     "note": "Most-cited title in Thai studies.",
-    "isbn10": "0824819748",
-    "isbn13": "9780824819743",
-    "featured": true,
+    "sku": "BTW-273",
     "status": "in_shop",
-    "sku": "BTW-273"
+    "featured": true
   },
   {
     "id": "274",
@@ -49,11 +43,9 @@
     "price": 18,
     "condition": "Used - Very Good",
     "note": "Standard survey; entry point to the Thai shelf.",
-    "isbn10": "1107671966",
-    "isbn13": "9781107671966",
-    "featured": false,
+    "sku": "BTW-274",
     "status": "in_shop",
-    "sku": "BTW-274"
+    "featured": false
   },
   {
     "id": "293",
@@ -63,11 +55,9 @@
     "price": 18,
     "condition": "Used - Very Good",
     "note": "Anarchist history of upland Southeast Asia.",
-    "isbn10": "0300169175",
-    "isbn13": "9780300169171",
-    "featured": false,
+    "sku": "BTW-293",
     "status": "in_shop",
-    "sku": "BTW-293"
+    "featured": false
   },
   {
     "id": "294",
@@ -77,11 +67,9 @@
     "price": 16,
     "condition": "Used - Good",
     "note": "Everyday peasant resistance.",
-    "isbn10": "0300036415",
-    "isbn13": "9780300036411",
-    "featured": false,
+    "sku": "BTW-294",
     "status": "in_shop",
-    "sku": "BTW-294"
+    "featured": false
   },
   {
     "id": "295",
@@ -91,11 +79,9 @@
     "price": 15,
     "condition": "Used - Very Good",
     "note": "Why certain schemes to improve the human condition fail.",
-    "isbn10": "0300078150",
-    "isbn13": "9780300078152",
-    "featured": false,
+    "sku": "BTW-295",
     "status": "in_shop",
-    "sku": "BTW-295"
+    "featured": false
   },
   {
     "id": "297",
@@ -105,11 +91,9 @@
     "price": 10,
     "condition": "Used - Very Good",
     "note": "Nationalism, still the assigned edition.",
-    "isbn10": "1844670864",
-    "isbn13": "9781844670864",
-    "featured": false,
+    "sku": "BTW-297",
     "status": "in_shop",
-    "sku": "BTW-297"
+    "featured": false
   },
   {
     "id": "262",
@@ -119,11 +103,9 @@
     "price": 12,
     "condition": "Used - Good",
     "note": "Civilization and Capitalism, vol. 1.",
-    "isbn10": "0520081145",
-    "isbn13": "9780520081147",
-    "featured": false,
+    "sku": "BTW-262",
     "status": "in_shop",
-    "sku": "BTW-262"
+    "featured": false
   },
   {
     "id": "263",
@@ -133,11 +115,9 @@
     "price": 18,
     "condition": "Used - Very Good",
     "note": "Civilization and Capitalism, vol. 2.",
-    "isbn10": "0520081153",
-    "isbn13": "9780520081154",
-    "featured": false,
+    "sku": "BTW-263",
     "status": "in_shop",
-    "sku": "BTW-263"
+    "featured": false
   },
   {
     "id": "264",
@@ -147,11 +127,9 @@
     "price": 20,
     "condition": "Used - Very Good",
     "note": "Civilization and Capitalism, vol. 3.",
-    "isbn10": "0520081161",
-    "isbn13": "9780520081161",
-    "featured": false,
+    "sku": "BTW-264",
     "status": "in_shop",
-    "sku": "BTW-264"
+    "featured": false
   },
   {
     "id": "270",
@@ -161,11 +139,9 @@
     "price": 22,
     "condition": "Used - Very Good",
     "note": "Lefebvre most-assigned book.",
-    "isbn10": "0631181776",
-    "isbn13": "9780631181774",
-    "featured": true,
+    "sku": "BTW-270",
     "status": "in_shop",
-    "sku": "BTW-270"
+    "featured": true
   },
   {
     "id": "307",
@@ -175,11 +151,9 @@
     "price": 9,
     "condition": "Used - Very Good",
     "note": "The prison book students actually request.",
-    "isbn10": "0679752552",
-    "isbn13": "9780679752554",
-    "featured": false,
+    "sku": "BTW-307",
     "status": "in_shop",
-    "sku": "BTW-307"
+    "featured": false
   },
   {
     "id": "265",
@@ -189,11 +163,9 @@
     "price": 8,
     "condition": "Used - Very Good",
     "note": "Best-selling volume of the three.",
-    "isbn10": "0679724699",
-    "isbn13": "9780679724698",
-    "featured": false,
+    "sku": "BTW-265",
     "status": "in_shop",
-    "sku": "BTW-265"
+    "featured": false
   },
   {
     "id": "381",
@@ -203,11 +175,9 @@
     "price": 10,
     "condition": "Used - Very Good",
     "note": "The title customers ask for.",
-    "isbn10": "039474067X",
-    "isbn13": "9780394740676",
-    "featured": true,
+    "sku": "BTW-381",
     "status": "in_shop",
-    "sku": "BTW-381"
+    "featured": true
   },
   {
     "id": "382",
@@ -217,11 +187,9 @@
     "price": 10,
     "condition": "Used - Very Good",
     "note": "Non-negotiable on a shelf like this.",
-    "isbn10": "0802141323",
-    "isbn13": "9780802141323",
-    "featured": false,
+    "sku": "BTW-382",
     "status": "in_shop",
-    "sku": "BTW-382"
+    "featured": false
   },
   {
     "id": "383",
@@ -231,11 +199,9 @@
     "price": 10,
     "condition": "Used - Very Good",
     "note": "Pairs with the race and empire shelves.",
-    "isbn10": "0802143008",
-    "isbn13": "9780802143006",
-    "featured": false,
+    "sku": "BTW-383",
     "status": "in_shop",
-    "sku": "BTW-383"
+    "featured": false
   },
   {
     "id": "314",
@@ -245,11 +211,9 @@
     "price": 9,
     "condition": "Used - Very Good",
     "note": "Short, cited, always moving.",
-    "isbn10": "0942299795",
-    "isbn13": "9780942299793",
-    "featured": false,
+    "sku": "BTW-314",
     "status": "in_shop",
-    "sku": "BTW-314"
+    "featured": false
   },
   {
     "id": "330",
@@ -259,11 +223,9 @@
     "price": 10,
     "condition": "Used - Like New",
     "note": "Contemporary demand, small and cheap to ship.",
-    "isbn10": "1846943170",
-    "isbn13": "9781846943171",
-    "featured": false,
+    "sku": "BTW-330",
     "status": "in_shop",
-    "sku": "BTW-330"
+    "featured": false
   },
   {
     "id": "341",
@@ -273,11 +235,9 @@
     "price": 12,
     "condition": "Used - Very Good",
     "note": "Political and economic origins of our time.",
-    "isbn10": "080705643X",
-    "isbn13": "9780807056431",
-    "featured": false,
+    "sku": "BTW-341",
     "status": "in_shop",
-    "sku": "BTW-341"
+    "featured": false
   },
   {
     "id": "343",
@@ -287,11 +247,9 @@
     "price": 14,
     "condition": "Used - Very Good",
     "note": "High-velocity scholarly crossover.",
-    "isbn10": "1612194192",
-    "isbn13": "9781612194196",
-    "featured": false,
+    "sku": "BTW-343",
     "status": "in_shop",
-    "sku": "BTW-343"
+    "featured": false
   },
   {
     "id": "344",
@@ -301,11 +259,9 @@
     "price": 14,
     "condition": "Used - Like New",
     "note": "Women, the body, primitive accumulation.",
-    "isbn10": "1570270597",
-    "isbn13": "9781570270598",
-    "featured": false,
+    "sku": "BTW-344",
     "status": "in_shop",
-    "sku": "BTW-344"
+    "featured": false
   },
   {
     "id": "349",
@@ -315,11 +271,9 @@
     "price": 12,
     "condition": "Used - Very Good",
     "note": "1914-1991 in one volume.",
-    "isbn10": "0679730052",
-    "isbn13": "9780679730057",
-    "featured": false,
+    "sku": "BTW-349",
     "status": "in_shop",
-    "sku": "BTW-349"
+    "featured": false
   },
   {
     "id": "404",
@@ -329,11 +283,9 @@
     "price": 10,
     "condition": "Used - Very Good",
     "note": "The missing urban-studies anchor.",
-    "isbn10": "067974195X",
-    "isbn13": "9780679741954",
-    "featured": false,
+    "sku": "BTW-404",
     "status": "in_shop",
-    "sku": "BTW-404"
+    "featured": false
   },
   {
     "id": "373",
@@ -343,11 +295,9 @@
     "price": 12,
     "condition": "Used - Like New",
     "note": "Highest-volume title in the category.",
-    "isbn10": "0807057835",
-    "isbn13": "9780807057834",
-    "featured": false,
+    "sku": "BTW-373",
     "status": "in_shop",
-    "sku": "BTW-373"
+    "featured": false
   },
   {
     "id": "371",
@@ -357,11 +307,9 @@
     "price": 12,
     "condition": "Used - Very Good",
     "note": "The Deloria that belongs on this shelf.",
-    "isbn10": "0806121297",
-    "isbn13": "9780806121291",
-    "featured": false,
+    "sku": "BTW-371",
     "status": "in_shop",
-    "sku": "BTW-371"
+    "featured": false
   },
   {
     "id": "454",
@@ -371,11 +319,9 @@
     "price": 9,
     "condition": "Used - Very Good",
     "note": "Volume seller; funds slower monographs.",
-    "isbn10": "0062397346",
-    "isbn13": "9780062397348",
-    "featured": false,
+    "sku": "BTW-454",
     "status": "in_shop",
-    "sku": "BTW-454"
+    "featured": false
   },
   {
     "id": "497",
@@ -385,11 +331,9 @@
     "price": 13,
     "condition": "Used - Very Good",
     "note": "Foundational, previously absent.",
-    "isbn10": "0156701537",
-    "isbn13": "9780156701532",
-    "featured": false,
+    "sku": "BTW-497",
     "status": "in_shop",
-    "sku": "BTW-497"
+    "featured": false
   },
   {
     "id": "498",
@@ -399,11 +343,9 @@
     "price": 9,
     "condition": "Used - Very Good",
     "note": "Highest-turnover Arendt.",
-    "isbn10": "0143039881",
-    "isbn13": "9780143039884",
-    "featured": false,
+    "sku": "BTW-498",
     "status": "in_shop",
-    "sku": "BTW-498"
+    "featured": false
   },
   {
     "id": "428",
@@ -413,11 +355,9 @@
     "price": 9,
     "condition": "Used - Very Good",
     "note": "The Weber gap next to Marx and Braudel.",
-    "isbn10": "0140439218",
-    "isbn13": "9780140439212",
-    "featured": false,
+    "sku": "BTW-428",
     "status": "in_shop",
-    "sku": "BTW-428"
+    "featured": false
   },
   {
     "id": "285",
@@ -427,11 +367,9 @@
     "price": 16,
     "condition": "Used - Very Good",
     "note": "Survey for the Cambodia cluster.",
-    "isbn10": "0813335116",
-    "isbn13": "9780813335117",
-    "featured": false,
+    "sku": "BTW-285",
     "status": "in_shop",
-    "sku": "BTW-285"
+    "featured": false
   },
   {
     "id": "286",
@@ -441,11 +379,9 @@
     "price": 14,
     "condition": "Used - Very Good",
     "note": "Terror and history in Pol Pot prison.",
-    "isbn10": "0520222474",
-    "isbn13": "9780520222472",
-    "featured": false,
+    "sku": "BTW-286",
     "status": "in_shop",
-    "sku": "BTW-286"
+    "featured": false
   },
   {
     "id": "290",
@@ -455,11 +391,9 @@
     "price": 10,
     "condition": "Used - Very Good",
     "note": "Personal history of Burma.",
-    "isbn10": "0374531161",
-    "isbn13": "9780374531164",
-    "featured": false,
+    "sku": "BTW-290",
     "status": "in_shop",
-    "sku": "BTW-290"
+    "featured": false
   },
   {
     "id": "420",
@@ -469,11 +403,9 @@
     "price": 8,
     "condition": "Used - Very Good",
     "note": "Doctrinal primer the Buddhism shelf was missing.",
-    "isbn10": "0802130313",
-    "isbn13": "9780802130310",
-    "featured": false,
+    "sku": "BTW-420",
     "status": "in_shop",
-    "sku": "BTW-420"
+    "featured": false
   },
   {
     "id": "494",
@@ -483,11 +415,9 @@
     "price": 14,
     "condition": "Used - Very Good",
     "note": "The Geertz everyone assigns.",
-    "isbn10": "0465097197",
-    "isbn13": "9780465097197",
-    "featured": false,
+    "sku": "BTW-494",
     "status": "in_shop",
-    "sku": "BTW-494"
+    "featured": false
   },
   {
     "id": "460",
@@ -497,11 +427,9 @@
     "price": 8,
     "condition": "Used - Very Good",
     "note": "The novel that belongs beside the Burma criticism.",
-    "isbn10": "0141185376",
-    "isbn13": "9780141185378",
-    "featured": false,
+    "sku": "BTW-460",
     "status": "in_shop",
-    "sku": "BTW-460"
+    "featured": false
   },
   {
     "id": "477",
@@ -511,11 +439,9 @@
     "price": 6,
     "condition": "Used - Very Good",
     "note": "Reliable turnover.",
-    "isbn10": "0451524934",
-    "isbn13": "9780451524935",
-    "featured": false,
+    "sku": "BTW-477",
     "status": "in_shop",
-    "sku": "BTW-477"
+    "featured": false
   },
   {
     "id": "439",
@@ -525,10 +451,8 @@
     "price": 7,
     "condition": "Used - Very Good",
     "note": "Brings general readers to the Africa shelf.",
-    "isbn10": "0385474547",
-    "isbn13": "9780385474542",
-    "featured": false,
+    "sku": "BTW-439",
     "status": "in_shop",
-    "sku": "BTW-439"
+    "featured": false
   }
 ]

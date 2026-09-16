@@ -1,34 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <title>Netlify form detection</title>
-</head>
-<body>
-  <form name="contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
-    <input type="hidden" name="form-name" value="contact" />
-    <input name="bot-field" />
-    <input name="name" />
-    <input name="email" type="email" />
-    <textarea name="message"></textarea>
-  </form>
-  <form name="order" data-netlify="true" netlify-honeypot="bot-field" hidden>
-    <input type="hidden" name="form-name" value="order" />
-    <input name="bot-field" />
-    <input name="book_id" />
-    <input name="title" />
-    <input name="name" />
-    <input name="email" type="email" />
-    <textarea name="message"></textarea>
-  </form>
-  <form name="want" data-netlify="true" netlify-honeypot="bot-field" hidden>
-    <input type="hidden" name="form-name" value="want" />
-    <input name="bot-field" />
-    <input name="name" />
-    <input name="email" type="email" />
-    <input name="title" />
-    <input name="author" />
-    <textarea name="message"></textarea>
-  </form>
-</body>
+<html>
+  <body>
+    <form name="contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="form-name" value="contact" />
+      <input name="bot-field" />
+      <input name="name" />
+      <input name="email" type="email" />
+      <textarea name="message"></textarea>
+    </form>
+    <form name="wants" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="form-name" value="wants" />
+      <input name="bot-field" />
+      <input name="name" />
+      <input name="email" type="email" />
+      <input name="title" />
+      <input name="author" />
+      <textarea name="message"></textarea>
+    </form>
+    <form name="order" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="form-name" value="order" />
+      <input name="bot-field" />
+      <input name="name" />
+      <input name="email" type="email" />
+      <input name="phone" />
+      <input name="address" />
+      <input name="city" />
+      <input name="state" />
+      <input name="zip" />
+      <input name="country" />
+      <textarea name="notes"></textarea>
+      <input name="shipping_method" />
+      <input name="subtotal" />
+      <input name="shipping" />
+      <input name="order_total" />
+      <input name="items_json" />
+      <textarea name="items"></textarea>
+    </form>
+  </body>
 </html>
